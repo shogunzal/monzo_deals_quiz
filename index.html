@@ -7,137 +7,228 @@
   <meta name="color-scheme" content="dark" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-  <meta name="description" content="Answer 3 questions and unlock a Monzo reward by entering your email and completing 3–5 sponsor deals." />
-  <title>Monzo Rewards Quiz</title>
+  <meta name="description" content="Answer 3 quick questions to reserve your £500 Monzo reward. Sign up to PlayCash and test 1 game for 5 seconds to activate." />
+  <title>Monzo £500 Reward — PlayCash Unlock</title>
   <link rel="icon" href="icon.webp" />
   <link rel="apple-touch-icon" href="icon.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root { --coral:#ff3931; --navy:#0c2432; --ink:#f4f7f8; --muted:#9eb0be; --line:rgba(255,255,255,.1); --bg:#0c2432; --card:#123447; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    [hidden] { display:none !important; }
-    html, body { min-height:100%; background:var(--bg); }
-    html { -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%; overscroll-behavior:none; }
-    body { color:var(--ink); font-family:Outfit,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; background:var(--bg); }
-    a { color:inherit; text-decoration:none; }
-    button { font:inherit; }
-    button, a, .option, .tt-reply-toggle { touch-action:manipulation; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
-    .tt-text { user-select:text; -webkit-user-select:text; }
-    .pill, .option, .cta, .tt-reply-toggle { transition:transform 100ms ease-out, background 100ms ease-out, border-color 100ms ease-out; }
-    .pill:active, .option:active, .cta:active, .tt-reply-toggle:active { transform:scale(.97); }
-    .site-header { position:sticky; top:0; z-index:20; background:rgba(12,36,50,.92); backdrop-filter:saturate(1.2) blur(12px); padding-top:env(safe-area-inset-top, 0px); }
-    .nav { display:flex; align-items:center; justify-content:space-between; max-width:1440px; height:68px; margin:auto; padding:0 22px; }
-    .wordmark { color:var(--coral); font-size:28px; font-weight:800; letter-spacing:-.06em; line-height:1; }
-    .nav-actions { display:flex; align-items:center; gap:8px; }
-    .pill { display:inline-flex; align-items:center; justify-content:center; height:40px; padding:0 16px; border:0; border-radius:999px; font-size:15px; font-weight:700; letter-spacing:-.01em; cursor:pointer; }
-    .signup { background:var(--coral); color:#111; }
-    .login { background:rgba(255,255,255,.12); color:#fff; }
-    main { width:min(100%,560px); margin:auto; padding:14px 20px calc(128px + env(safe-area-inset-bottom, 0px)); }
-    .ends { margin-bottom:14px; padding:12px 14px; border-radius:16px; color:#fff; background:linear-gradient(180deg,#3a2428 0%,#14161c 100%); text-align:center; font-size:14px; font-weight:600; line-height:1.45; }
-    .ends p + p { margin-top:2px; }
-    .ends strong { color:#ff5c54; font-weight:800; font-variant-numeric:tabular-nums; }
-    body.final-state .ends { display:none; }
-    .hero-card { position:relative; overflow:hidden; container-type:inline-size; padding:20px 20px 16px; border-radius:28px; color:#111; background:radial-gradient(circle at 100% 0%,rgba(255,255,255,.42),transparent 38%),var(--coral); }
-    .hero-card h1 { margin-top:12px; font-size:clamp(28px,7.2cqi,40px); font-weight:800; line-height:.98; letter-spacing:-.045em; }
-    .hero-card h1 em { color:inherit; font-style:normal; }
-    .unlock-line { margin-top:8px; font-size:15px; font-weight:700; letter-spacing:-.02em; color:rgba(0,0,0,.72); }
-    .card-stats { display:grid; grid-template-columns:1fr 1fr 1fr; margin-top:12px; padding:8px 4px; border-radius:16px; background:rgba(0,0,0,.1); text-align:center; }
-    .card-stats div { padding:0 6px; }
-    .card-stats div + div { border-left:1px solid rgba(0,0,0,.18); }
-    .card-stats strong { display:block; font-size:clamp(16px,4.6cqi,21px); font-weight:800; letter-spacing:-.04em; line-height:1; }
-    .card-stats span { display:block; margin-top:4px; color:rgba(0,0,0,.55); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-    .hero-copy { display:none; margin-bottom:8px; text-align:center; }
-    body.final-state .hero-card { display:none; }
-    body.final-state .hero-copy { display:block; }
-    .hero-copy img { width:52px; height:52px; border-radius:14px; margin:0 auto 10px; }
-    .hero-copy h1 { font-size:clamp(30px,8vw,40px); font-weight:800; line-height:.95; letter-spacing:-.05em; }
-    .hero-copy h1 em { color:var(--coral); font-style:normal; }
-    .hero-copy p { max-width:380px; margin:8px auto 0; color:var(--muted); font-size:15px; line-height:1.35; }
-    .offer { display:none; margin-top:8px; padding:18px; border-radius:28px; color:#fff; background:#102f42; border:1px solid rgba(255,255,255,.08); }
-    body.final-state .offer { display:block; }
-    .offer-main { display:flex; align-items:center; gap:14px; }
-    .offer img { width:54px; height:54px; border-radius:14px; flex:0 0 54px; }
-    .offer-copy { flex:1; min-width:0; }
-    .offer-label { color:var(--coral); font-size:11px; font-weight:700; letter-spacing:.14em; }
-    .offer-title { margin-top:3px; font-size:20px; font-weight:800; letter-spacing:-.03em; }
-    .offer-sub { margin-top:2px; color:rgba(255,255,255,.62); font-size:13px; }
-    .amount { text-align:right; }
-    .amount strong { display:block; color:var(--coral); font-size:28px; font-weight:800; letter-spacing:-.04em; }
-    .amount span { color:rgba(255,255,255,.45); font-size:10px; font-weight:700; letter-spacing:.12em; }
-    .reserve-bar { display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; font-weight:600; }
-    .reserve-time { min-width:42px; color:var(--coral); font-variant-numeric:tabular-nums; }
-    .reserve-track { flex:1; height:6px; border-radius:99px; background:rgba(255,255,255,.16); overflow:hidden; }
-    .reserve-fill { display:block; width:100%; height:100%; background:var(--coral); }
-    .quiz { margin-top:16px; }
-    .quiz-meta { display:flex; justify-content:space-between; margin-bottom:10px; color:#fff; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-    .progress { height:6px; margin-bottom:14px; border-radius:99px; background:rgba(255,255,255,.12); overflow:hidden; }
-    .progress-fill { width:33%; height:100%; background:var(--coral); transition:width .25s ease; }
-    .quiz h2 { font-size:clamp(24px,6vw,32px); font-weight:800; line-height:1.05; letter-spacing:-.045em; }
-    .quiz-sub { margin-top:6px; color:var(--muted); font-size:14px; }
-    .quiz-context { margin-top:12px; color:#d5dee6; font-size:14px; font-weight:500; line-height:1.45; }
-    .option-badge { margin-left:8px; padding:2px 7px; border-radius:999px; background:#ffe8e6; color:#b4231c; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
-    .options { display:grid; gap:10px; margin-top:18px; }
-    .option { display:flex; align-items:center; justify-content:space-between; width:100%; padding:16px 18px; border:1.5px solid rgba(255,255,255,.1); border-radius:18px; color:#fff; background:var(--card); text-align:left; cursor:pointer; }
-    .option:focus-visible { border-color:var(--coral); outline:0; }
-    @media (hover:hover) and (pointer:fine) { .option:hover { border-color:var(--coral); } }
-    .option-label { display:flex; align-items:center; gap:12px; font-size:16px; font-weight:600; }
-    .radio { width:18px; height:18px; border:2px solid rgba(255,255,255,.35); border-radius:50%; }
-    .arrow { color:#9eb0be; font-size:22px; font-weight:500; }
-    .result-echo { margin:0 0 12px; color:#fff; font-size:15px; font-weight:700; line-height:1.35; }
-    .final-badge { display:inline-block; margin:8px 0 6px; padding:5px 10px; border-radius:999px; color:#ffb4ae; background:rgba(255,57,49,.16); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-    .section-title { margin:4px 0 10px; font-size:24px; font-weight:800; letter-spacing:-.04em; text-align:left; }
-    .steps { display:grid; gap:8px; }
-    .step { display:flex; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--line); border-radius:16px; background:var(--card); text-align:left; }
-    .step-icon { display:grid; place-items:center; width:44px; height:44px; flex:0 0 44px; border-radius:14px; background:rgba(255,255,255,.06); }
-    .step-icon svg { width:22px; height:22px; stroke:#fff; }
-    .step-copy { flex:1; min-width:0; }
-    .step h3 { font-size:16px; font-weight:700; letter-spacing:-.02em; }
-    .step p { margin-top:2px; color:var(--muted); font-size:13px; line-height:1.35; }
-    .step-number { display:grid; place-items:center; width:32px; height:32px; flex:0 0 32px; border-radius:50%; background:var(--coral); color:#111; font-size:15px; font-weight:800; }
-    .verify { margin-top:12px; padding:12px 14px; border-radius:16px; color:#fff; background:#081820; text-align:left; }
-    .verify-flag { display:inline-block; margin-bottom:6px; padding:3px 8px; border-radius:999px; background:var(--coral); color:#111; font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
-    .verify p { color:rgba(255,255,255,.78); font-size:13px; font-weight:500; line-height:1.4; }
-    .claim-proof { margin-top:14px; color:#c5d0d8; font-size:13px; font-weight:600; line-height:1.35; text-align:center; }
-    .community { margin-top:42px; }
-    .community h2 { margin-bottom:6px; font-size:28px; font-weight:800; letter-spacing:-.04em; text-align:center; }
-    .tt-comments { text-align:left; }
-    .tt-comments-header { display:flex; align-items:center; justify-content:space-between; margin:0 0 16px; }
-    .tt-comments-title { font-size:14px; font-weight:700; color:#fff; }
-    .tt-comments-count { font-size:13px; font-weight:600; color:#9eb0be; }
-    .tt-thread { margin-bottom:4px; }
-    .tt-msg { display:flex; gap:10px; margin-bottom:10px; }
-    .tt-msg.reply { margin-left:42px; }
-    .tt-pfp { width:36px; height:36px; border-radius:50%; flex-shrink:0; display:grid; place-items:center; font-size:13px; font-weight:800; color:#fff; }
-    .tt-msg-body { flex:1; min-width:0; }
-    .tt-user { font-size:14px; font-weight:800; color:#fff; letter-spacing:-.02em; }
-    .tt-text { font-size:14px; color:#e7eef3; line-height:1.45; margin-top:2px; }
-    .tt-proof-img { width:100%; max-width:220px; border-radius:16px; margin-top:8px; display:block; border:1px solid var(--line); }
-    .tt-meta { display:flex; align-items:center; gap:12px; margin-top:6px; }
-    .tt-time, .tt-likes { font-size:12px; color:#9eb0be; }
-    .tt-likes { display:flex; align-items:center; gap:3px; }
-    .tt-likes svg { width:12px; height:12px; }
-    .tt-reply-toggle { font-size:13px; font-weight:700; color:var(--coral); cursor:pointer; border:none; background:none; padding:0; margin-top:6px; }
-    .tt-replies { display:none; }
-    .tt-replies.open { display:block; margin-top:10px; }
-    .tt-divider { height:1px; background:var(--line); margin:14px 0; }
-    .cta { position:fixed; z-index:30; right:18px; bottom:calc(16px + env(safe-area-inset-bottom, 0px)); left:18px; width:min(100% - 36px,520px); margin:auto; padding:20px 20px; border:0; border-radius:999px; color:#111; background:var(--coral); font-size:17px; font-weight:800; line-height:1.2; text-align:center; cursor:pointer; }
-    .cta:disabled { opacity:.7; cursor:wait; }
-    footer { max-width:560px; margin:0 auto; padding:8px 20px calc(128px + env(safe-area-inset-bottom, 0px)); color:#9aa3ab; font-size:11px; line-height:1.45; text-align:center; }
-    @media (max-width:420px) {
-      .nav { height:60px; padding:0 16px; }
-      .login { display:none; }
-      .wordmark { font-size:26px; }
-      .hero-card { border-radius:24px; padding:18px 16px 14px; }
-      main { padding:12px 16px calc(120px + env(safe-area-inset-bottom, 0px)); }
+    :root {
+      --coral: #ff3931;
+      --coral-light: #ff5e57;
+      --navy: #0c2432;
+      --navy-dark: #081a24;
+      --card: #123447;
+      --card-alt: #0e2736;
+      --ink: #f4f7f8;
+      --muted: #9eb0be;
+      --line: rgba(255, 255, 255, 0.1);
+      --bg: #0c2432;
+      --pc-pink: #f0449a;
+      --pc-purple: #8b5cf6;
+      --pc-gradient: linear-gradient(90deg, #f0449a, #8b5cf6);
+      --pc-glow: rgba(240, 68, 154, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    html, body { min-height: 100%; background: var(--bg); }
+    html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; overscroll-behavior: none; }
+    body { color: var(--ink); font-family: Outfit, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; background: var(--bg); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button, a, .option, .tt-reply-toggle { touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+    .tt-text { user-select: text; -webkit-user-select: text; }
+    .pill, .option, .cta, .tt-reply-toggle { transition: transform 100ms ease-out, background 100ms ease-out, border-color 100ms ease-out; }
+    .pill:active, .option:active, .cta:active, .tt-reply-toggle:active { transform: scale(.97); }
+
+    /* Navigation */
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(12, 36, 50, .94); backdrop-filter: saturate(1.2) blur(12px); -webkit-backdrop-filter: saturate(1.2) blur(12px); padding-top: env(safe-area-inset-top, 0px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; max-width: 1440px; height: 64px; margin: auto; padding: 0 18px; }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
+    .wordmark { color: var(--coral); font-size: 27px; font-weight: 800; letter-spacing: -.06em; line-height: 1; }
+    .partner-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; background: rgba(240, 68, 154, 0.15); border: 1px solid rgba(240, 68, 154, 0.35); color: #f9a8d4; font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+    .partner-pill span.bold { color: #fff; font-weight: 800; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; height: 38px; padding: 0 15px; border: 0; border-radius: 999px; font-size: 14px; font-weight: 700; letter-spacing: -.01em; cursor: pointer; }
+    .signup { background: var(--coral); color: #111; }
+    .login { background: rgba(255, 255, 255, .12); color: #fff; }
+
+    main { width: min(100%, 540px); margin: auto; padding: 12px 18px calc(128px + env(safe-area-inset-bottom, 0px)); }
+
+    /* Urgency Banner */
+    .ends { margin-bottom: 12px; padding: 11px 14px; border-radius: 16px; color: #fff; background: linear-gradient(180deg, #301f25 0%, #12141c 100%); border: 1px solid rgba(255, 68, 59, 0.22); text-align: center; font-size: 13.5px; font-weight: 600; line-height: 1.45; }
+    .ends p + p { margin-top: 2px; }
+    .ends strong { color: #ff5c54; font-weight: 800; font-variant-numeric: tabular-nums; }
+    body.final-state .ends { display: none; }
+
+    /* Hero Card */
+    .hero-card { position: relative; overflow: hidden; container-type: inline-size; padding: 22px 20px 18px; border-radius: 26px; color: #111; background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, .45), transparent 42%), var(--coral); box-shadow: 0 14px 34px rgba(255, 57, 49, 0.25); }
+    .dual-badges { display: flex; align-items: center; gap: 8px; }
+    .brand-icon-wrap { width: 50px; height: 50px; border-radius: 14px; background: #fff; display: grid; place-items: center; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .brand-icon-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .plus-badge { width: 22px; height: 22px; border-radius: 50%; background: rgba(0, 0, 0, 0.18); color: #111; display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+    .pc-icon-wrap { width: 50px; height: 50px; border-radius: 14px; background: #16132a; display: grid; place-items: center; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+    .pc-icon-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-card h1 { margin-top: 14px; font-size: clamp(28px, 7.4cqi, 40px); font-weight: 800; line-height: .98; letter-spacing: -.045em; }
+    .hero-card h1 em { color: inherit; font-style: normal; text-decoration: underline; text-decoration-color: rgba(0,0,0,0.2); text-underline-offset: 4px; }
+    .unlock-line { margin-top: 8px; font-size: 14.5px; font-weight: 700; letter-spacing: -.02em; color: rgba(0, 0, 0, .78); display: flex; align-items: center; gap: 6px; }
+    .unlock-line .clock-tag { background: rgba(0,0,0,0.12); padding: 2px 7px; border-radius: 6px; font-size: 12px; }
+
+    .card-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 14px; padding: 10px 4px; border-radius: 16px; background: rgba(0, 0, 0, .12); text-align: center; }
+    .card-stats div { padding: 0 6px; }
+    .card-stats div + div { border-left: 1px solid rgba(0, 0, 0, .18); }
+    .card-stats strong { display: block; font-size: clamp(16px, 4.6cqi, 21px); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+    .card-stats span { display: block; margin-top: 4px; color: rgba(0, 0, 0, .6); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* Final State Elements */
+    .hero-copy { display: none; margin-bottom: 8px; text-align: center; }
+    body.final-state .hero-card { display: none; }
+    body.final-state .hero-copy { display: block; }
+    .hero-copy .dual-center { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px; }
+    .hero-copy .dual-center img { width: 48px; height: 48px; border-radius: 13px; }
+    .hero-copy h1 { font-size: clamp(29px, 8vw, 38px); font-weight: 800; line-height: .98; letter-spacing: -.045em; }
+    .hero-copy h1 em { color: var(--coral); font-style: normal; }
+    .hero-copy p { max-width: 400px; margin: 8px auto 0; color: var(--muted); font-size: 14.5px; line-height: 1.4; }
+
+    /* Offer Card */
+    .offer { display: none; margin-top: 8px; padding: 18px 20px; border-radius: 24px; color: #fff; background: var(--card); border: 1.5px solid rgba(255, 255, 255, .1); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+    body.final-state .offer { display: block; }
+    .offer-main { display: flex; align-items: center; gap: 14px; }
+    .offer-logo-lockup { position: relative; width: 54px; height: 54px; flex: 0 0 54px; }
+    .offer-logo-lockup .monzo-sub-logo { width: 44px; height: 44px; border-radius: 12px; display: block; }
+    .offer-logo-lockup .pc-sub-badge { position: absolute; bottom: -3px; right: -3px; width: 24px; height: 24px; border-radius: 7px; border: 2px solid var(--card); overflow: hidden; background: #16132a; }
+    .offer-logo-lockup .pc-sub-badge img { width: 100%; height: 100%; object-fit: cover; }
+    .offer-copy { flex: 1; min-width: 0; }
+    .offer-label { color: #f9a8d4; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .offer-title { margin-top: 2px; font-size: 19px; font-weight: 800; letter-spacing: -.03em; }
+    .offer-sub { margin-top: 2px; color: rgba(255, 255, 255, .68); font-size: 13px; line-height: 1.3; }
+    .amount { text-align: right; flex-shrink: 0; }
+    .amount strong { display: block; color: var(--coral); font-size: 28px; font-weight: 800; letter-spacing: -.04em; }
+    .amount span { color: rgba(255, 255, 255, .45); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+    .reserve-bar { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .12); font-size: 13px; font-weight: 600; }
+    .reserve-time { min-width: 42px; color: var(--coral); font-variant-numeric: tabular-nums; font-weight: 700; }
+    .reserve-track { flex: 1; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, .16); overflow: hidden; }
+    .reserve-fill { display: block; width: 100%; height: 100%; background: var(--coral); }
+
+    /* Quiz Screen */
+    .quiz { margin-top: 16px; }
+    .quiz-meta { display: flex; justify-content: space-between; margin-bottom: 10px; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .progress { height: 6px; margin-bottom: 14px; border-radius: 99px; background: rgba(255, 255, 255, .12); overflow: hidden; }
+    .progress-fill { width: 33%; height: 100%; background: var(--coral); transition: width .25s ease; }
+    .quiz h2 { font-size: clamp(23px, 5.8vw, 30px); font-weight: 800; line-height: 1.08; letter-spacing: -.04em; }
+    .quiz-sub { margin-top: 6px; color: var(--muted); font-size: 14px; }
+    .quiz-context { margin-top: 12px; padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,0.06); border-left: 3px solid var(--coral); color: #d5dee6; font-size: 13.5px; font-weight: 500; line-height: 1.45; }
+    .option-badge { margin-left: 8px; padding: 2px 7px; border-radius: 999px; background: #ffe8e6; color: #b4231c; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .options { display: grid; gap: 10px; margin-top: 18px; }
+    .option { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px 18px; border: 1.5px solid rgba(255, 255, 255, .12); border-radius: 18px; color: #fff; background: var(--card); text-align: left; cursor: pointer; }
+    .option:focus-visible { border-color: var(--coral); outline: 0; }
+    @media (hover: hover) and (pointer: fine) { .option:hover { border-color: var(--coral); background: #163e54; } }
+    .option-label { display: flex; align-items: center; gap: 12px; font-size: 15.5px; font-weight: 600; }
+    .radio { width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, .35); border-radius: 50%; flex-shrink: 0; }
+    .arrow { color: #9eb0be; font-size: 22px; font-weight: 500; }
+
+    /* Final Screen Specifics */
+    .final-badge { display: inline-flex; align-items: center; gap: 6px; margin: 8px 0 8px; padding: 5px 12px; border-radius: 999px; color: #ffb4ae; background: rgba(255, 57, 49, .16); border: 1px solid rgba(255, 57, 49, 0.3); font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .result-echo { margin: 0 0 12px; color: #fff; font-size: 15px; font-weight: 700; line-height: 1.4; }
+    
+    .uk-strip { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding: 10px 14px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); font-size: 13px; font-weight: 600; color: #d0dbe2; }
+    .uk-flag { font-size: 18px; }
+    .uk-strip strong { color: #fff; }
+
+    .section-title { margin: 8px 0 12px; font-size: 23px; font-weight: 800; letter-spacing: -.04em; text-align: left; }
+    
+    /* 3 Steps List */
+    .steps { display: grid; gap: 10px; }
+    .step { display: flex; align-items: flex-start; gap: 12px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); text-align: left; position: relative; }
+    .step-icon-wrap { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 14px; background: rgba(255, 255, 255, .07); display: grid; place-items: center; overflow: hidden; margin-top: 1px; }
+    .step-icon-wrap svg { width: 22px; height: 22px; stroke: #fff; }
+    .step-icon-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .step-copy { flex: 1; min-width: 0; }
+    .step-copy h3 { font-size: 16px; font-weight: 700; letter-spacing: -.02em; color: #fff; }
+    .step-copy p { margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+    
+    /* Auth method pills in step 1 */
+    .method-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+    .method-chip { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #e2e8f0; font-size: 11.5px; font-weight: 600; }
+    .method-chip svg { width: 11px; height: 11px; fill: currentColor; }
+
+    /* 5s tag in step 2 */
+    .time-badge { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; padding: 2px 7px; border-radius: 6px; background: rgba(240, 68, 154, 0.2); border: 1px solid rgba(240, 68, 154, 0.4); color: #f9a8d4; font-size: 11px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
+
+    .step-number { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; background: var(--coral); color: #111; font-size: 14px; font-weight: 800; margin-top: 2px; }
+
+    /* Featured Game Card */
+    .featured-game { margin-top: 12px; padding: 14px; border-radius: 18px; background: linear-gradient(180deg, #181432 0%, #110e24 100%); border: 1px solid rgba(240, 68, 154, 0.3); box-shadow: 0 8px 24px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 14px; }
+    .game-thumb { width: 56px; height: 56px; border-radius: 14px; flex: 0 0 56px; background: #2a2254; overflow: hidden; display: grid; place-items: center; font-size: 28px; position: relative; }
+    .game-thumb-badge { position: absolute; top: 0; right: 0; background: var(--pc-gradient); color: #fff; font-size: 8.5px; font-weight: 800; padding: 1px 4px; border-bottom-left-radius: 6px; text-transform: uppercase; }
+    .game-details { flex: 1; min-width: 0; }
+    .game-tag { color: #f9a8d4; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+    .game-title { font-size: 16px; font-weight: 800; color: #fff; margin-top: 2px; }
+    .game-desc { font-size: 12px; color: #a8a2c0; margin-top: 2px; }
+    .game-action { padding: 6px 12px; border-radius: 999px; background: var(--pc-gradient); color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
+
+    /* The Important Bit / Verification */
+    .verify { margin-top: 12px; padding: 14px 16px; border-radius: 18px; color: #fff; background: #081a24; border: 1px solid rgba(255, 57, 49, 0.35); text-align: left; }
+    .verify-flag { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 6px; padding: 3px 9px; border-radius: 999px; background: var(--coral); color: #111; font-size: 10.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .verify p { color: rgba(255, 255, 255, .88); font-size: 13.5px; font-weight: 500; line-height: 1.45; }
+    .verify p b { color: #fff; font-weight: 700; }
+
+    /* Trust Stats Strip */
+    .trust-strip { display: flex; align-items: stretch; justify-content: space-between; margin-top: 14px; padding: 14px 12px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; text-align: center; }
+    .trust-item { flex: 1; }
+    .trust-num { font-size: 16px; font-weight: 800; color: #fff; }
+    .trust-desc { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+    .trust-sep { width: 1px; background: rgba(255,255,255,0.1); margin: 2px 0; }
+
+    /* Community Comments */
+    .community { margin-top: 38px; }
+    .community h2 { margin-bottom: 6px; font-size: 26px; font-weight: 800; letter-spacing: -.04em; text-align: center; }
+    .tt-comments { text-align: left; margin-top: 14px; }
+    .tt-comments-header { display: flex; align-items: center; justify-content: space-between; margin: 0 0 16px; }
+    .tt-comments-title { font-size: 14px; font-weight: 700; color: #fff; }
+    .tt-comments-count { font-size: 13px; font-weight: 600; color: #9eb0be; }
+    .tt-thread { margin-bottom: 4px; }
+    .tt-msg { display: flex; gap: 10px; margin-bottom: 10px; }
+    .tt-msg.reply { margin-left: 42px; }
+    .tt-pfp { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; }
+    .tt-msg-body { flex: 1; min-width: 0; }
+    .tt-user { font-size: 14px; font-weight: 800; color: #fff; letter-spacing: -.02em; }
+    .tt-text { font-size: 14px; color: #e7eef3; line-height: 1.45; margin-top: 2px; }
+    .tt-proof-img { width: 100%; max-width: 220px; border-radius: 16px; margin-top: 8px; display: block; border: 1px solid var(--line); }
+    .tt-meta { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
+    .tt-time, .tt-likes { font-size: 12px; color: #9eb0be; }
+    .tt-likes { display: flex; align-items: center; gap: 3px; }
+    .tt-likes svg { width: 12px; height: 12px; }
+    .tt-reply-toggle { font-size: 13px; font-weight: 700; color: var(--coral); cursor: pointer; border: none; background: none; padding: 0; margin-top: 6px; }
+    .tt-replies { display: none; }
+    .tt-replies.open { display: block; margin-top: 10px; }
+    .tt-divider { height: 1px; background: var(--line); margin: 14px 0; }
+
+    /* Sticky CTA */
+    .cta { position: fixed; z-index: 30; right: 18px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); left: 18px; width: min(100% - 36px, 504px); margin: auto; padding: 18px 20px; border: 0; border-radius: 999px; color: #111; background: var(--coral); font-size: 17px; font-weight: 800; line-height: 1.2; text-align: center; cursor: pointer; box-shadow: 0 8px 30px rgba(255, 57, 49, 0.45); }
+    .cta:disabled { opacity: .7; cursor: wait; }
+
+    footer { max-width: 540px; margin: 0 auto; padding: 12px 18px calc(128px + env(safe-area-inset-bottom, 0px)); color: #8195a4; font-size: 11.5px; line-height: 1.5; text-align: center; }
+
+    @media (max-width: 420px) {
+      .nav { height: 58px; padding: 0 14px; }
+      .login { display: none; }
+      .wordmark { font-size: 25px; }
+      .hero-card { border-radius: 22px; padding: 18px 16px 14px; }
+      main { padding: 10px 14px calc(120px + env(safe-area-inset-bottom, 0px)); }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Monzo">
-      <a class="wordmark" href="#" aria-label="Monzo home">monzo</a>
+      <div class="nav-left">
+        <a class="wordmark" href="#" aria-label="Monzo home">monzo</a>
+        <div class="partner-pill"><span class="bold">PlayCa$h</span> partner</div>
+      </div>
       <div class="nav-actions">
         <a class="pill signup" href="#">Sign up</a>
         <a class="pill login" href="#">Log in</a>
@@ -146,878 +237,433 @@
   </header>
   <main>
     <div class="ends" id="ends">
-      <p><span aria-hidden="true">⏳</span> Today's reward ends in <strong id="ends-time">16:00:00</strong></p>
-      <p><span aria-hidden="true">🔥</span> Only <strong>44</strong> £500 rewards left today</p>
+      <p><span aria-hidden="true">⏳</span> Today's £500 allocation resets in <strong id="ends-time">16:00:00</strong></p>
+      <p><span aria-hidden="true">🔥</span> Only <strong>38</strong> £500 transfers remaining today</p>
     </div>
+
     <section class="hero" id="hero">
       <div class="hero-card">
-        <img src="icon.webp" alt="" width="56" height="56" style="width:56px;height:56px;border-radius:16px;display:block" />
+        <div class="dual-badges">
+          <div class="brand-icon-wrap">
+            <img src="icon.webp" alt="Monzo" width="50" height="50" />
+          </div>
+          <span class="plus-badge">+</span>
+          <div class="pc-icon-wrap">
+            <img src="playcash.png" alt="PlayCash" width="50" height="50" />
+          </div>
+        </div>
         <h1>Get <em>£500</em><br />to your Monzo</h1>
-        <p class="unlock-line">Unlock with email + 3–5 deals</p>
+        <p class="unlock-line">
+          <span>Unlock with 1 game test</span>
+          <span class="clock-tag">⏱ 5 seconds</span>
+        </p>
         <div class="card-stats" aria-label="Rewards stats">
           <div><strong>£1.8M+</strong><span>Rewarded</span></div>
-          <div><strong>12K+</strong><span>Claimed</span></div>
-          <div><strong>~10 min</strong><span>To unlock</span></div>
+          <div><strong>12K+</strong><span>Transferred</span></div>
+          <div><strong>~2 min</strong><span>To unlock</span></div>
         </div>
       </div>
+
       <div class="hero-copy">
-        <img src="icon.webp" alt="" width="52" height="52" />
+        <div class="dual-center">
+          <img src="icon.webp" alt="Monzo" width="48" height="48" />
+          <span style="font-size:20px;font-weight:800;color:var(--muted)">+</span>
+          <img src="playcash.png" alt="PlayCash" width="48" height="48" />
+        </div>
         <h1>Get <em id="picked-hero">£500</em><br />in your Monzo</h1>
-        <p>Email + 3–5 deals. Paid after they’re verified.</p>
+        <p>Sign up to PlayCash &amp; keep 1 featured game open for 5 seconds to activate your direct transfer.</p>
       </div>
     </section>
+
     <section class="offer" id="final-offer" aria-label="Monzo payout offer">
       <div class="offer-main">
-        <img src="icon.webp" alt="" width="54" height="54" />
-        <div class="offer-copy"><div class="offer-label">MONZO · 192 LEFT</div><div class="offer-title">Monzo payout</div><div class="offer-sub">Email + 3–5 deals to unlock</div></div>
-        <div class="amount"><strong id="picked-amount">£500</strong><span>YOUR AMOUNT</span></div>
+        <div class="offer-logo-lockup">
+          <img class="monzo-sub-logo" src="icon.webp" alt="Monzo" width="44" height="44" />
+          <div class="pc-sub-badge">
+            <img src="playcash.png" alt="PlayCash" width="20" height="20" />
+          </div>
+        </div>
+        <div class="offer-copy">
+          <div class="offer-label">MONZO x PLAYCASH · 174 LEFT</div>
+          <div class="offer-title">Direct Monzo Transfer</div>
+          <div class="offer-sub">Single 5-second game test required</div>
+        </div>
+        <div class="amount">
+          <strong id="picked-amount">£500</strong>
+          <span>YOUR AMOUNT</span>
+        </div>
       </div>
-      <div class="reserve-bar"><strong>Reserved</strong> for: <span class="reserve-time" id="reserve-time">10:00</span><span class="reserve-track"><span class="reserve-fill" id="reserve-fill"></span></span></div>
+      <div class="reserve-bar">
+        <strong>Reserved</strong> for: <span class="reserve-time" id="reserve-time">10:00</span>
+        <span class="reserve-track"><span class="reserve-fill" id="reserve-fill"></span></span>
+      </div>
     </section>
+
     <section class="quiz" id="quiz" aria-live="polite">
       <div id="quiz-screen">
-        <div class="quiz-meta"><span id="quiz-count">Question 1 of 3</span><span id="quiz-percent">33%</span></div>
+        <div class="quiz-meta">
+          <span id="quiz-count">Question 1 of 3</span>
+          <span id="quiz-percent">33%</span>
+        </div>
         <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
-        <h2 id="quiz-title">How would you use a Monzo reward?</h2>
-        <p class="quiz-sub" id="quiz-sub">Pick one.</p>
+        <h2 id="quiz-title">How would you spend your £500 Monzo reward?</h2>
+        <p class="quiz-sub" id="quiz-sub">Pick one to reserve your reward category.</p>
         <p class="quiz-context" id="quiz-context" hidden></p>
         <div class="options" id="options"></div>
       </div>
+
       <div class="final" id="final-screen" hidden>
-        <span class="final-badge">Reward reserved</span>
+        <span class="final-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          £500 Transfer Reserved
+        </span>
         <p class="result-echo" id="result-echo"></p>
-        <h2 class="section-title">Here’s how it works — 3 steps</h2>
+
+        <div class="uk-strip">
+          <span class="uk-flag">🇬🇧</span>
+          <div><strong>Limited to UK residents</strong> · Available to eligible users aged 18+</div>
+        </div>
+
+        <h2 class="section-title">Unlock in 3 simple steps</h2>
+        
         <div class="steps">
-          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg></div><div class="step-copy"><h3>Enter your email</h3><p>A valid address, so the claim can be tracked.</p></div><div class="step-number">1</div></article>
-          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></div><div class="step-copy"><h3>Complete 3–5 deals</h3><p>App sign-ups, surveys, or free trials.</p></div><div class="step-number">2</div></article>
-          <article class="step"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9h19M6 14h5"/></svg></div><div class="step-copy"><h3>Get paid to Monzo</h3><p>Released after the deals are verified.</p></div><div class="step-number">3</div></article>
+          <!-- Step 1 -->
+          <article class="step">
+            <div class="step-icon-wrap">
+              <img src="playcash.png" alt="PlayCash" width="32" height="32" />
+            </div>
+            <div class="step-copy">
+              <h3>Sign up to PlayCash</h3>
+              <p>Create your free account so your Monzo reward can be linked and verified.</p>
+              <div class="method-chips">
+                <span class="method-chip">
+                  <svg viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.7-7.85-12-14.44-6.84-10.45-12.01-22.61-15.5-36.48-3.5-13.88-5.25-26.68-5.25-38.41 0-14.36 3.69-26.54 11.08-36.54 7.39-10 16.73-15.14 28.02-15.42 4.13 0 9.07 1.13 14.83 3.4 5.76 2.26 9.4 3.46 10.92 3.58 2.06-.24 5.92-1.52 11.58-3.83 5.66-2.31 10.5-3.32 14.52-3.03 13.93.97 24.62 6.22 32.06 15.75-12.28 7.46-18.28 17.58-18 30.34.28 9.94 4.12 18.23 11.52 24.87 7.4 6.64 16.14 10.37 26.22 11.2-.82 2.72-1.8 5.48-2.94 8.28zM119.22 33.15c0-7.29 2.65-14.32 7.95-21.09 5.3-6.77 11.95-11.16 19.95-13.16 1.04 7.6-1.15 14.74-6.57 21.42-5.42 6.68-12.2 11.18-20.33 13.5-.2-.23-.5-.45-1-.67z"/></svg>
+                  Apple ID
+                </span>
+                <span class="method-chip">
+                  <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  Google
+                </span>
+                <span class="method-chip">✉ Email</span>
+              </div>
+            </div>
+            <div class="step-number">1</div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="2" width="12" height="20" rx="2.5"/>
+                <path d="M10 18h4"/>
+                <path d="M10 6h4"/>
+              </svg>
+            </div>
+            <div class="step-copy">
+              <h3>Install 1 game &amp; open for 5 seconds</h3>
+              <p>Download 1 featured game (like Monopoly GO!) and keep it open for at least 5 seconds. This records your device.</p>
+              <div class="time-badge">⏱ 5 seconds only</div>
+            </div>
+            <div class="step-number">2</div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+                <path d="M6 15h4"/>
+              </svg>
+            </div>
+            <div class="step-copy">
+              <h3>Receive your £500 Monzo transfer</h3>
+              <p>Once the 5-second test is registered, your £500 is released directly to your linked Monzo account.</p>
+            </div>
+            <div class="step-number">3</div>
+          </article>
         </div>
+
+        <!-- Featured game preview -->
+        <div class="featured-game">
+          <div class="game-thumb">
+            🎲
+            <span class="game-thumb-badge">HOT</span>
+          </div>
+          <div class="game-details">
+            <div class="game-tag">🔥 Most Popular Unlock Game</div>
+            <div class="game-title">MONOPOLY GO!</div>
+            <div class="game-desc">Install and launch for 5 seconds to complete Step 2</div>
+          </div>
+          <span class="game-action">Quick Unlock</span>
+        </div>
+
         <div class="verify">
-          <div class="verify-flag">Verification required</div>
-          <p id="picked-verify">Your £500 stays pending until the email and 3–5 deals are done. Read each deal’s terms so it counts.</p>
+          <div class="verify-flag">The important bit</div>
+          <p id="picked-verify">Sign up via <b>Email, Apple ID, or Google</b>, install 1 game, and keep it open for at least 5 seconds. Your £500 Monzo transfer unlocks once the install is recorded by PlayCash.</p>
         </div>
-        <p class="claim-proof">jake_mz · “£132 hit my Monzo after 3 deals.”</p>
+
+        <div class="trust-strip">
+          <div class="trust-item"><div class="trust-num">★ 4.8</div><div class="trust-desc">App Rating</div></div>
+          <div class="trust-sep"></div>
+          <div class="trust-item"><div class="trust-num">290K+</div><div class="trust-desc">User Reviews</div></div>
+          <div class="trust-sep"></div>
+          <div class="trust-item"><div class="trust-num">£0</div><div class="trust-desc">Free to Join</div></div>
+        </div>
       </div>
     </section>
+
     <section class="community">
       <h2>What our community says</h2>
       <div class="tt-comments">
-      <div class="tt-comments-header">
-        <span class="tt-comments-title">Comments</span>
-        <span class="tt-comments-count">2,847</span>
-      </div>
+        <div class="tt-comments-header">
+          <span class="tt-comments-title">Comments</span>
+          <span class="tt-comments-count">2,847</span>
+        </div>
 
-      <!-- 1. skepticism → proof -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#e44d26">J</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">jake_mz</div>
-            <div class="tt-text">nah why did this genuinely work 😭 £132 sitting in my Monzo after testing 3 games</div>
-            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/b281cb32b1564cfbc9852e1c.jpg" alt="">
-            <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 3.2k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#7c3aed">M</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">mia_plays22</div>
-                  <div class="tt-text">how long did urs take?? im halfway through my second game rn</div>
-                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
+        <!-- 1. Skepticism -> proof -->
+        <div class="tt-thread">
+          <div class="tt-msg">
+            <div class="tt-pfp" style="background:#e44d26">J</div>
+            <div class="tt-msg-body">
+              <div class="tt-user">jake_mz</div>
+              <div class="tt-text">nah why did this genuinely work 😭 signed up with apple id, downloaded monopoly go and left it open for like 10 seconds, £132 hit my Monzo!</div>
+              <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/b281cb32b1564cfbc9852e1c.jpg" alt="Payout proof">
+              <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 3.2k</span></div>
+              <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+              <div class="tt-replies">
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#7c3aed">M</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">mia_plays22</div>
+                    <div class="tt-text">did you have to spend any money??</div>
+                    <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
+                  </div>
+                </div>
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#e44d26">J</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">jake_mz</div>
+                    <div class="tt-text">nah literally zero lol just install 1 game and leave it open for 5 seconds to verify your device</div>
+                    <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 203</span></div>
+                  </div>
                 </div>
               </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#e44d26">J</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">jake_mz</div>
-                  <div class="tt-text">like 2 hours? just did coin master and monopoly go on the bus lol</div>
-                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 203</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tt-divider"></div>
+
+        <!-- 2. Skepticism -> balance -->
+        <div class="tt-thread">
+          <div class="tt-msg">
+            <div class="tt-pfp" style="background:#0891b2">L</div>
+            <div class="tt-msg-body">
+              <div class="tt-user">lilmonzo</div>
+              <div class="tt-text">was calling this fake last week and now look at my Monzo balance 💀 literally took 2 mins</div>
+              <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/8a1d484eeda2072a04b1d499.jpg" alt="Proof balance">
+              <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.1k</span></div>
+              <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+              <div class="tt-replies">
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#dc2626">K</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">kxng_builds</div>
+                    <div class="tt-text">same energy lol took me ages to actually try it</div>
+                    <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 67</span></div>
+                  </div>
+                </div>
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#0891b2">L</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">lilmonzo</div>
+                    <div class="tt-text">fr the scepticism is real until the notification drops</div>
+                    <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 312</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tt-divider"></div>
+
+        <!-- 3. Skeptic single -->
+        <div class="tt-thread">
+          <div class="tt-msg">
+            <div class="tt-pfp" style="background:#f59e0b">N</div>
+            <div class="tt-msg-body">
+              <div class="tt-user">noobmaster_69</div>
+              <div class="tt-text">my mate showed me his Monzo pot and he had £248 from PlayCash 😭 just downloaded the game, takes literally 5 secs</div>
+              <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 743</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tt-divider"></div>
+
+        <!-- 4. Timing question -->
+        <div class="tt-thread">
+          <div class="tt-msg">
+            <div class="tt-pfp" style="background:#16a34a">S</div>
+            <div class="tt-msg-body">
+              <div class="tt-user">soph.gaming</div>
+              <div class="tt-text">how long does it take from opening the game to getting verified? just finished mine</div>
+              <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 456</span></div>
+              <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
+              <div class="tt-replies">
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#db2777">A</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">abby.irl</div>
+                    <div class="tt-text">mine registered in about 3 minutes after keeping monopoly go open for 10s!</div>
+                    <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 189</span></div>
+                  </div>
+                </div>
+                <div class="tt-msg reply">
+                  <div class="tt-pfp" style="background:#16a34a">S</div>
+                  <div class="tt-msg-body">
+                    <div class="tt-user">soph.gaming</div>
+                    <div class="tt-text">update: just hit my monzo!! thank u sm 🙏</div>
+                    <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 94</span></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tt-divider"></div>
-
-      <!-- 2. skepticism → tried it -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0891b2">L</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">lilmonzo</div>
-            <div class="tt-text">was calling this fake last week and now look at my Monzo balance 💀</div>
-            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/8a1d484eeda2072a04b1d499.jpg" alt="">
-            <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.1k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#dc2626">K</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">kxng_builds</div>
-                  <div class="tt-text">same energy lol took me ages to actually try it</div>
-                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 67</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#0891b2">L</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">lilmonzo</div>
-                  <div class="tt-text">fr the scepticism is real until u check ur balance</div>
-                  <div class="tt-meta"><span class="tt-time">3d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 312</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 3. skeptic single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#f59e0b">N</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">noobmaster_69</div>
-            <div class="tt-text">my mate showed me his Monzo and he had like £248 from this 😭 just started the deals, im shaking</div>
-            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 743</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 4. timing question -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#16a34a">S</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">soph.gaming</div>
-            <div class="tt-text">how long does it actually take from finishing the games to getting paid to Monzo? mines been pending since yesterday</div>
-            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 456</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#db2777">A</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">abby.irl</div>
-                  <div class="tt-text">mine took about 4 hours after i finished the last game</div>
-                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 78</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#ea580c">R</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">rx_buildz</div>
-                  <div class="tt-text">same day for me. finished coin master at lunch, the money was in my Monzo by tea time</div>
-                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#16a34a">S</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">soph.gaming</div>
-                  <div class="tt-text">UPDATE it just came through 😭😭 £186 in my Monzo i literally screamed</div>
-                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 489</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 5. timing single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#6366f1">T</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">tay_gamess</div>
-            <div class="tt-text">did it during my free period at college and had the money in my Monzo before last lesson ended lol</div>
-            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 612</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 6. timing with reply -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0d9488">W</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">willgamingyt</div>
-            <div class="tt-text">quick q: does it actually go straight to ur Monzo or is it a code?</div>
-            <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 287</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#8b5cf6">D</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">dani.mz</div>
-                  <div class="tt-text">u put ur Monzo details in at the start and it goes straight to ur Monzo, checked mine same day</div>
-                  <div class="tt-meta"><span class="tt-time">2d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 156</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 7. which games -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0369a1">C</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">charliebuilds</div>
-            <div class="tt-text">which 3 games did everyone pick? i wanna do the quickest ones</div>
-            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 534</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#e44d26">J</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">jake_mz</div>
-                  <div class="tt-text">coin master, monopoly go and 8 ball pool. coin master was done in like 40 mins</div>
-                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 345</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#db2777">A</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">abby.irl</div>
-                  <div class="tt-text">solitaire cash is slept on fr. finished the tasks in one sitting</div>
-                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#0369a1">C</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">charliebuilds</div>
-                  <div class="tt-text">going with coin master and solitaire then cheers 🙌</div>
-                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 45</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 8. games advice single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#b91c1c">E</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">ellie.plays</div>
-            <div class="tt-text">8 ball pool counted as done way faster than i expected, literally one session</div>
-            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 398</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 9. games with img reply -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#ca8a04">H</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">harryxxgaming</div>
-            <div class="tt-text">for anyone wondering: yes its real, no its not a scam, yes u need to actually complete the tasks not just download them</div>
-            <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.9k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#059669">G</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">gemma.irl</div>
-                  <div class="tt-text">^ this. i just installed 3 apps and wondered why nothing happened 😂 u gotta actually play them</div>
-                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 145</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#ca8a04">H</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">harryxxgaming</div>
-                  <div class="tt-text">exactly lol complete the actual tasks and itll come through</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/c5e70ee25ef8e7bd7d345ce6.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">1d ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 267</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 10. celebration -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#9333ea">F</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">freya_cash</div>
-            <div class="tt-text">THE MONEY ACTUALLY HIT MY MONZO 😭😭 i woke my sister up screaming at my phone</div>
-            <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.8k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#d946ef">P</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">phoebe_plays</div>
-                  <div class="tt-text">the way i ran to check mine after seeing this 😂</div>
-                  <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#9333ea">F</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">freya_cash</div>
-                  <div class="tt-text">did urs come through too??</div>
-                  <div class="tt-meta"><span class="tt-time">22h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 34</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 11. proof with img -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#4f46e5">O</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">oli_master99</div>
-            <div class="tt-text">showing my group chat this thread rn like SEE i told you lot it was real</div>
-            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/0b0d3184afeb4e818b8a7d72.jpg" alt="">
-            <div class="tt-meta"><span class="tt-time">23h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.4k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#be185d">I</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">izzy.builds</div>
-                  <div class="tt-text">haha the receipts are right here innit</div>
-                  <div class="tt-meta"><span class="tt-time">22h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 98</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 12. celebration single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0284c7">Z</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">zack_cash</div>
-            <div class="tt-text">genuinely emotional over free money rn 😭 £157 just sat there in my Monzo</div>
-            <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 876</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 13. telling friends -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#dc2626">K</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">kxng_builds</div>
-            <div class="tt-text">sent this to the groupchat and now everyones doing the deals in maths 💀</div>
-            <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.1k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#7c3aed">M</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">mia_plays22</div>
-                  <div class="tt-text">same at ours lol the whole back row was on it 😂</div>
-                  <div class="tt-meta"><span class="tt-time">18h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#dc2626">K</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">kxng_builds</div>
-                  <div class="tt-text">3 of them already got paid to Monzo today, mrs davies is fuming 😂</div>
-                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 412</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 14. told family -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#ea580c">R</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">rx_buildz</div>
-            <div class="tt-text">my little brother saw the money in my Monzo and now he wont leave me alone asking how</div>
-            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 956</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 15. family with img reply -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#059669">G</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">gemma.irl</div>
-            <div class="tt-text">now my mums asking what those deals are because she saw me getting excited over my phone 😭</div>
-            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 567</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#6366f1">T</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">tay_gamess</div>
-                  <div class="tt-text">my nan asked me to explain it 3 times 💀</div>
-                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 321</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 16. spent the money -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#d946ef">P</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">phoebe_plays</div>
-            <div class="tt-text">first thing i bought was those jordans 💀 been wanting them for literally 2 years</div>
-            <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.6k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#b91c1c">E</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">ellie.plays</div>
-                  <div class="tt-text">JORDANS omg ur so lucky</div>
-                  <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 156</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#d946ef">P</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">phoebe_plays</div>
-                  <div class="tt-text">exactly!! the fit is finally complete</div>
-                  <div class="tt-meta"><span class="tt-time">7h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 89</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 17. spending single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#8b5cf6">D</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">dani.mz</div>
-            <div class="tt-text">paid my phone bill and still had money left over, this is actually mad</div>
-            <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 723</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 18. spending with img -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#be185d">I</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">izzy.builds</div>
-            <div class="tt-text">just took my friends out with the Monzo money 😭 my friends are so confused</div>
-            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#0284c7">Z</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">zack_cash</div>
-                  <div class="tt-text">taking everyone out is so worth it, good shout</div>
-                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 56</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#be185d">I</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">izzy.builds</div>
-                  <div class="tt-text">legit covered the whole table 😂</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ae52afed386d7ebe3eda1c15.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">4h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 19. comparison to buying -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#ea580c">R</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">rx_buildz</div>
-            <div class="tt-text">bro i been asking for money for years and ur telling me i coulda just tested some games 💀 thats like £189 for free</div>
-            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2.3k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#f59e0b">N</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">noobmaster_69</div>
-                  <div class="tt-text">i literally calculated it too 😭 its like £194</div>
-                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 289</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#ea580c">R</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">rx_buildz</div>
-                  <div class="tt-text">my dad is gonna be well happy i stopped asking for money lmao</div>
-                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 20. comparison single -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0d9488">W</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">willgamingyt</div>
-            <div class="tt-text">i used to spend my whole allowance begging for money every month. this is genuinely life changing for my wallet 😂</div>
-            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 678</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 21. comparison with img reply -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#0369a1">C</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">charliebuilds</div>
-            <div class="tt-text">the fact its actual money straight to ur Monzo and not some dodgy code, mad</div>
-            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 345</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#ca8a04">H</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">harryxxgaming</div>
-                  <div class="tt-text">the actual Monzo bit is what sold me, none of that survey points nonsense</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ae39f9bb89939bf2fcd97e36.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 198</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 22. practical: mobile -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#b91c1c">E</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">ellie.plays</div>
-            <div class="tt-text">does this work on iphone? or is it android only</div>
-            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#16a34a">S</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">soph.gaming</div>
-                  <div class="tt-text">both! i did it on my iphone 13 no issues</div>
-                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 123</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#9333ea">F</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">freya_cash</div>
-                  <div class="tt-text">android here, worked fine. the deals work on both</div>
-                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 87</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 23. practical: uk -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#4f46e5">O</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">oli_master99</div>
-            <div class="tt-text">is this uk only? my cousin in australia was asking</div>
-            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 201</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 24. practical: age -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#db2777">A</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">abby.irl</div>
-            <div class="tt-text">do u need to be a certain age for this? asking for my younger sister</div>
-            <div class="tt-meta"><span class="tt-time">47m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 178</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#ca8a04">H</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">harryxxgaming</div>
-                  <div class="tt-text">think u need to be 13+ to do the deals, check the terms tho</div>
-                  <div class="tt-meta"><span class="tt-time">45m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 56</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 25. update thread -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#7c3aed">M</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">mia_plays22</div>
-            <div class="tt-text">update: finished all 3 games yesterday, still pending… will update again</div>
-            <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 567</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#e44d26">J</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">jake_mz</div>
-                  <div class="tt-text">give it a bit mine took overnight</div>
-                  <div class="tt-meta"><span class="tt-time">14h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 78</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#7c3aed">M</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">mia_plays22</div>
-                  <div class="tt-text">UPDATE 2: IT JUST CAME THROUGH 😭😭😭 £214 I CANT BREATHE</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/9e97d642afe245222091adef.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">8h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 456</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 26. update with img -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#059669">G</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">gemma.irl</div>
-            <div class="tt-text">when the £163 hit my Monzo and it was genuinely real 😭😭</div>
-            <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/82f17d55f77413e6d0d6a55d.jpg" alt="">
-            <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1.3k</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 2 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#0891b2">L</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">lilmonzo</div>
-                  <div class="tt-text">this was me fr, woke the whole house up checking my account</div>
-                  <div class="tt-meta"><span class="tt-time">5h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 123</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#059669">G</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">gemma.irl</div>
-                  <div class="tt-text">the disbelief lasted until i actually spent it 😂</div>
-                  <div class="tt-meta"><span class="tt-time">4h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 234</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 27. update with img reply -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#6366f1">T</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">tay_gamess</div>
-            <div class="tt-text">day 2 update: the money is still in my Monzo lol was half expecting it to disappear</div>
-            <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 445</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 1 reply</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#dc2626">K</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">kxng_builds</div>
-                  <div class="tt-text">lmao same i keep logging in to check theyre real 😂</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/ec8c9a56d96e96bb173584c6.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">2h ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 198</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tt-divider"></div>
-
-      <!-- 28. someone new starting -->
-      <div class="tt-thread">
-        <div class="tt-msg">
-          <div class="tt-pfp" style="background:#d946ef">P</div>
-          <div class="tt-msg-body">
-            <div class="tt-user">phoebe_plays</div>
-            <div class="tt-text">right starting the deals rn after reading this entire comment section, wish me luck 🤞</div>
-            <div class="tt-meta"><span class="tt-time">47m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 312</span></div>
-            <button class="tt-reply-toggle" onclick="this.nextElementSibling.classList.toggle('open')">View 3 replies</button>
-            <div class="tt-replies">
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#e44d26">J</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">jake_mz</div>
-                  <div class="tt-text">do coin master first trust me its the fastest one</div>
-                  <div class="tt-meta"><span class="tt-time">43m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 67</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#0891b2">L</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">lilmonzo</div>
-                  <div class="tt-text">good luck!! come back and update us 😭</div>
-                  <div class="tt-meta"><span class="tt-time">40m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 45</span></div>
-                </div>
-              </div>
-              <div class="tt-msg reply">
-                <div class="tt-pfp" style="background:#16a34a">S</div>
-                <div class="tt-msg-body">
-                  <div class="tt-user">soph.gaming</div>
-                  <div class="tt-text">one of us one of us 😂 ull have it in Monzo by tonight</div>
-                  <img class="tt-proof-img" src="https://web-production-3d9be.up.railway.app/comment-images/2e93426a197b04b842180285.jpg" alt="">
-                  <div class="tt-meta"><span class="tt-time">35m ago</span><span class="tt-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 189</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
     </section>
   </main>
-  <button class="cta" id="cta" type="button" hidden>Claim My £500 <span aria-hidden="true">→</span></button>
-  <footer>Monzo is a trademark of Monzo Bank Ltd. This promotion is not affiliated with or endorsed by Monzo. Must be 18+. Deal completion required. Results vary.</footer>
+
+  <button class="cta" id="cta" type="button" hidden>Claim My £500 via PlayCash <span aria-hidden="true">→</span></button>
+
+  <footer>
+    Monzo is a trademark of Monzo Bank Ltd. PlayCash is an independent mobile rewards partner. This promotional campaign is not directly affiliated with or endorsed by Monzo Bank Ltd. Must be 18+ and a UK resident. Completion of the single game test requirement is mandatory. Payout speeds and reward amounts depend on user participation and device verification.
+  </footer>
+
   <script>
     const questions = [
-      { title:'How would you use a Monzo reward?', sub:'Pick one.', options:['Everyday spending','Bills','Friends or family','Saving up'] },
-      { title:'Can you complete 3–5 quick sponsor deals?', sub:'This is what unlocks it.', context:'Sponsors fund the £500. Deals are app sign-ups, surveys, or free trials, and it only unlocks after they’re verified.', badge:true, options:["Yes, I'll finish my deals today",'I can do them this week','I need to read the terms first'] },
-      { title:'What payout would you like?', sub:'Paid to your Monzo after your email and deals are verified.', options:['£100','£250','£350','£500'] }
+      {
+        title: 'How would you spend your £500 Monzo reward?',
+        sub: 'Pick one to allocate your payout.',
+        options: ['Everyday spending & groceries', 'Rent or household bills', 'Shopping haul & clothes', 'Saving in a Monzo pot']
+      },
+      {
+        title: 'Can you install 1 featured game and leave it open for 5 seconds?',
+        sub: 'This is the single requirement to unlock it.',
+        context: 'PlayCash sponsors the £500 Monzo rewards. Simply sign up with your Email, Apple ID, or Google, install 1 game (e.g. Monopoly GO!), and keep it open for 5 seconds to record your device.',
+        badge: true,
+        options: [
+          "Yes, I'll install and test 1 game now",
+          'I can do the 5-second test today',
+          'I need to read the steps first'
+        ]
+      },
+      {
+        title: 'Confirm your payout reward amount:',
+        sub: 'Sent directly to your Monzo once your 5-second test is registered.',
+        options: ['£500 (Max Payout)', '£350', '£250', '£100']
+      }
     ];
+
     const useLine = {
-      'Everyday spending':'everyday spending',
-      'Bills':'bills',
-      'Friends or family':'friends or family',
-      'Saving up':'saving up'
+      'Everyday spending & groceries': 'everyday spending & groceries',
+      'Rent or household bills': 'rent and bills',
+      'Shopping haul & clothes': 'shopping and hauls',
+      'Saving in a Monzo pot': 'savings'
     };
-    const dealLine = {
-      "Yes, I'll finish my deals today":"You’ll finish the deals today.",
-      'I can do them this week':'You’ll do the deals this week.',
-      'I need to read the terms first':'You’ll read each deal’s terms first.'
+
+    const unlockLine = {
+      "Yes, I'll install and test 1 game now": 'You chose to complete the 5-second game unlock now.',
+      'I can do the 5-second test today': 'You will complete the 5-second game unlock today.',
+      'I need to read the steps first': 'You will review the 3 unlock steps first.'
     };
+
     let index = 0;
     const picks = [];
     let seconds = 600;
     const quizScreen = document.getElementById('quiz-screen');
     const finalScreen = document.getElementById('final-screen');
     const cta = document.getElementById('cta');
+
     function renderQuestion() {
       const q = questions[index];
-      const pct = Math.round((index + 1) / questions.length * 100);
+      const pct = Math.round(((index + 1) / questions.length) * 100);
       document.getElementById('quiz-count').textContent = 'Question ' + (index + 1) + ' of ' + questions.length;
       document.getElementById('quiz-percent').textContent = pct + '%';
       document.getElementById('progress-fill').style.width = pct + '%';
       document.getElementById('quiz-title').textContent = q.title;
       document.getElementById('quiz-sub').textContent = q.sub;
+      
       const context = document.getElementById('quiz-context');
       context.textContent = q.context || '';
       context.hidden = !q.context;
+
       document.getElementById('options').innerHTML = q.options.map((option, i) => {
         const badge = q.badge && i === 0 ? '<span class="option-badge">Recommended</span>' : '';
-        return '<button class="option" type="button" data-choice="' + option.replace(/"/g, '&quot;') + '"><span class="option-label"><span class="radio"></span><span>' + option + badge + '</span></span><span class="arrow" aria-hidden="true">›</span></button>';
+        return '<button class="option" type="button" data-choice="' + option.replace(/"/g, '&quot;') + '">' +
+                 '<span class="option-label"><span class="radio"></span><span>' + option + badge + '</span></span>' +
+                 '<span class="arrow" aria-hidden="true">›</span>' +
+               '</button>';
       }).join('');
-      document.querySelectorAll('.option').forEach(button => button.addEventListener('click', () => answer(button.getAttribute('data-choice'))));
+
+      document.querySelectorAll('.option').forEach(button => {
+        button.addEventListener('click', () => answer(button.getAttribute('data-choice')));
+      });
     }
+
     function answer(choice) {
       picks[index] = choice;
-      if (index < questions.length - 1) { index += 1; renderQuestion(); return; }
-      const amount = picks[2] || '£500';
+      if (index < questions.length - 1) {
+        index += 1;
+        renderQuestion();
+        return;
+      }
+
+      const rawAmount = picks[2] || '£500';
+      const cleanAmount = rawAmount.split(' ')[0] || '£500';
       const use = useLine[picks[0]] || 'a Monzo reward';
-      const when = dealLine[picks[1]] || 'You’ll complete the deals before it pays.';
-      document.getElementById('picked-hero').textContent = amount;
-      document.getElementById('picked-amount').textContent = amount;
-      document.getElementById('result-echo').textContent = 'You picked ' + amount + ' for ' + use + '. ' + when;
-      document.getElementById('picked-verify').textContent = 'Your ' + amount + ' stays pending until the email and 3–5 deals are done. Read each deal’s terms so it counts.';
+      const unlockCommitment = unlockLine[picks[1]] || 'Complete the 1-game PlayCash unlock to release your funds.';
+
+      document.getElementById('picked-hero').textContent = cleanAmount;
+      document.getElementById('picked-amount').textContent = cleanAmount;
+      document.getElementById('result-echo').textContent = 'Your ' + cleanAmount + ' reward is reserved for ' + use + '. ' + unlockCommitment;
+      document.getElementById('picked-verify').textContent = 'Sign up via Email, Apple ID, or Google, install 1 featured game, and leave it running for at least 5 seconds. Your ' + cleanAmount + ' Monzo transfer unlocks as soon as the install is recorded by PlayCash.';
+
       quizScreen.hidden = true;
       finalScreen.hidden = false;
       document.body.classList.add('final-state');
       cta.hidden = false;
-      cta.innerHTML = 'Claim My ' + amount + ' <span aria-hidden="true">→</span>';
+      cta.innerHTML = 'Claim ' + cleanAmount + ' via PlayCash <span aria-hidden="true">→</span>';
       window.scrollTo(0, 0);
+
       cta.onclick = () => {
         if (cta.disabled) return;
         cta.disabled = true;
-        cta.textContent = 'Opening offer…';
-        window.location.href = 'http://t.garageredeem.com/click';
+        cta.textContent = 'Opening PlayCash…';
+        const targetUrl = 'http://t.garageredeem.com/click' + (window.location.search || '');
+        window.location.href = targetUrl;
       };
     }
+
     function tick() {
       const now = new Date();
       const end = new Date(now);
       end.setHours(24, 0, 0, 0);
       const left = Math.max(0, end - now);
-      const clock = [Math.floor(left / 3600000), Math.floor(left / 60000) % 60, Math.floor(left / 1000) % 60]
-        .map(part => String(part).padStart(2, '0')).join(':');
+      const clock = [
+        Math.floor(left / 3600000),
+        Math.floor(left / 60000) % 60,
+        Math.floor(left / 1000) % 60
+      ].map(part => String(part).padStart(2, '0')).join(':');
       document.getElementById('ends-time').textContent = clock;
+
       if (seconds <= 0) return;
       seconds -= 1;
       const time = Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
       document.getElementById('reserve-time').textContent = time;
-      document.getElementById('reserve-fill').style.width = (seconds / 600 * 100) + '%';
+      document.getElementById('reserve-fill').style.width = ((seconds / 600) * 100) + '%';
     }
+
     tick();
     setInterval(tick, 1000);
     renderQuestion();
